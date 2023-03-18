@@ -19,8 +19,13 @@ export default function userReducer(state = initialState, action: Action) {
   switch (action.type) {
     case types.SET_USER_NAME:
       return {
-        state,
+        ...state,
         name: action.payload.name
+      };
+    case types.SET_WORKOUT_DAYS:
+      return {
+        ...state,
+        workoutDays: action.payload.workoutDays
       };
     default:
       return state;

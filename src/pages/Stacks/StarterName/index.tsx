@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from 'hooks/redux-hook';
 //Components
 import DefaultButton from 'components/Button';
 import DefaultTitle from 'components/Title';
+import HeaderButton from 'components/HeaderButton';
 
 //Types
 import { User } from 'types/user';
@@ -27,11 +28,7 @@ const StarterName = () => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTitle: '',
-      headerRight: () => (
-        <S.HeaderButton onPress={handleNextAction} underlayColor="none">
-          <S.HeaderButtonText>Avançar</S.HeaderButtonText>
-        </S.HeaderButton>
-      )
+      headerRight: () => <HeaderButton onPress={handleNextAction} />
     });
   }, [navigation, name]);
 

@@ -9,6 +9,7 @@ export type RootStackParamList = {
   Preload: undefined;
   TabDefault: undefined;
   StackDefault: undefined;
+  StarterLevel: undefined;
 
   //Stacks
   Starter: undefined;
@@ -19,11 +20,14 @@ export type RootStackParamList = {
 //Default Stack Types
 export type StackScreenRouteProp = RouteProp<
   RootStackParamList,
-  'StackDefault' | 'StarterName' | 'StarterDays'
+  'StackDefault' | 'StarterName' | 'StarterDays' | 'StarterLevel'
 >;
 
 export type StackScreenNavigationProp = CompositeNavigationProp<
-  StackNavigationProp<RootStackParamList, 'StackDefault' | 'StarterName' | 'StarterDays'>,
+  StackNavigationProp<
+    RootStackParamList,
+    'StackDefault' | 'StarterName' | 'StarterDays' | 'StarterLevel'
+  >,
   BottomTabNavigationProp<RootStackParamList>
 >;
 

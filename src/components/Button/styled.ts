@@ -7,6 +7,12 @@ const ButtonAreaModifiers = {
   `,
   dark: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.mainBg};
+  `,
+  unfilled: (theme: DefaultTheme) => css`
+    background-color: ${theme.colors.gray};
+  `,
+  selected: (theme: DefaultTheme) => css`
+    background-color: ${theme.colors.red};
   `
 };
 

@@ -5,35 +5,16 @@ export const Container = styled.SafeAreaView`
     flex: 1;
     background-color: ${theme.colors.lightBg};
     align-items: center;
-    /* justify-content: center; */
     padding: 0px ${theme.spacings.medium};
   `}
 `;
 
-export const NameInput = styled.TextInput`
+export const DaysArea = styled.View`
   ${({ theme }) => css`
-    border: 1px solid ${theme.colors.gray};
+    flex-direction: row;
     width: 100%;
-    height: 50px;
-    border-radius: ${theme.border.radius};
-    margin-top: ${theme.spacings.xxlarge};
-    font-size: ${theme.font.sizes.medium};
-    padding: 0px ${theme.spacings.xsmall};
-  `}
-`;
-
-export const ConfigArea = styled.View`
-  ${({ theme }) => css`
-    width: 100%;
-    margin-top: ${theme.spacings.xxlarge};
-  `}
-`;
-
-export const HeaderButton = styled.TouchableHighlight``;
-
-export const HeaderButtonText = styled.Text`
-  ${({ theme }) => css`
-    color: ${theme.colors.primary};
-    font-weight: ${theme.font.bold};
+    flex-wrap: wrap;
+    margin-top: ${theme.spacings.medium};
+    gap: ${theme.spacings.xxsmall};
   `}
 `;
