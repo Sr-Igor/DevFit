@@ -1,5 +1,5 @@
 //React Navigation
-import DefaultStack from './src/navigators/Stack';
+import DefaultStack from 'navigators/Stack';
 import { NavigationContainer } from '@react-navigation/native';
 
 //Styled Components
@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'styles/theme';
 
 //Redux Configs
-import { store, persistor } from './src/redux/store';
+import { store, persistor } from 'store/store';
 import { Provider as ProviderRedux } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 

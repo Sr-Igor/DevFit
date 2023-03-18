@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 
 //Components
 import DefaultButton from 'components/Button';
+import DefaultTitle from 'components/Title';
 
 //Types
 import { StackScreenNavigationProp } from 'types/Navigation';
@@ -26,7 +27,7 @@ const Starter = () => {
 
   return (
     <S.Container>
-      <S.Title>Bem vindo(a) ao DevFit</S.Title>
+      <DefaultTitle title="Bem vindo(a) ao DevFit" />
       <S.ImageArea>
         <S.ImageItem source={require('../../../assets/boneco.png')} />
       </S.ImageArea>
