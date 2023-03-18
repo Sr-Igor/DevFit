@@ -2,10 +2,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const MainTab = createBottomTabNavigator();
 
-import TabBar from '../components/TabBar';
-import TabDefault from '../pages/TabDefault';
-import TabDefault1 from '../pages/TabDefault1';
-import TabDefault2 from '../pages/TabDefault2';
+import TabBar from 'components/TabBar';
+import TabDefault from 'pages/TabDefault';
+import TabDefault1 from 'pages/TabDefault1';
+import TabDefault2 from 'pages/TabDefault2';
 
 const DefaultTab = () => (
   <MainTab.Navigator

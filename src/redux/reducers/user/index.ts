@@ -1,5 +1,5 @@
 import * as types from './types';
-import { User } from '../../../types/user';
+import { User } from 'types/user';
 
 const initialState = {
   name: '',

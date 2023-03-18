@@ -1,0 +1,5 @@
+Screens
+
+-Screen with verification with user is existent (Preload)
+-STACK - Initial screen, user configs
+-TAB - If user is existent

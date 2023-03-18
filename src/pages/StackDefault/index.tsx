@@ -9,7 +9,7 @@ const StackDefault = (props: {
 
   return (
     <View>
-      <Text>StackDefault</Text>
+      <Text>Sem nome</Text>
 
       <Button title="Go to TabDefault" onPress={handleNavigate} />
     </View>

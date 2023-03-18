@@ -9,6 +9,12 @@
     },
     "react-native": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+       },
+      "babel-module": {}
     }
   },
   "extends": [
@@ -28,7 +34,7 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "import"],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
