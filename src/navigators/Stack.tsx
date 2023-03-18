@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import StackDefault from 'pages/StackDefault';
+import StackDefault from 'pages/Stacks';
 import TabDefault from 'navigators/Tab';
 import Preload from 'pages/Preload';
 import { RootStackParamList } from 'types/Navigation';

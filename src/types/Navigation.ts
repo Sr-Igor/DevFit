@@ -5,18 +5,21 @@ import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
 //General Stack Types
 export type RootStackParamList = {
-  StackDefault: undefined;
-  TabDefault: undefined;
+  //Hight Order
   Preload: undefined;
+  TabDefault: undefined;
+  StackDefault: undefined;
+  StarterName: undefined;
+
+  //Stacks
+  Starter: undefined;
 };
 
 //Default Stack Types
-export type StackScreenRouteProp = RouteProp<
-  RootStackParamList,
-  'StackDefault'
->;
+export type StackScreenRouteProp = RouteProp<RootStackParamList, 'StackDefault' | 'StarterName'>;
+
 export type StackScreenNavigationProp = CompositeNavigationProp<
-  StackNavigationProp<RootStackParamList, 'StackDefault'>,
+  StackNavigationProp<RootStackParamList, 'StackDefault' | 'StarterName'>,
   BottomTabNavigationProp<RootStackParamList>
 >;
 

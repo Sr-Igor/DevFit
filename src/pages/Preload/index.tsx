@@ -1,7 +1,11 @@
-import { useAppSelector } from 'hooks/redux-hook';
-import { useNavigation } from '@react-navigation/native';
+//Navigation
 import { StackActions } from '@react-navigation/native';
-// import { Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+//Redux
+import { useAppSelector } from 'hooks/redux-hook';
+
+//Types
 import { User } from 'types/user';
 
 const PreloadScreen = () => {
