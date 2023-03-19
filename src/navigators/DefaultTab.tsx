@@ -10,7 +10,13 @@ import WorkoutStack from './WorkoutStack';
 import MyWorkoutStack from './MyWorkoutStack';
 
 const DefaultTab = () => (
-  <MainTab.Navigator initialRouteName="WorkoutStack" tabBar={(props) => <TabBar {...props} />}>
+  <MainTab.Navigator
+    initialRouteName="WorkoutStack"
+    tabBar={(props) => <TabBar {...props} />}
+    screenOptions={{
+      headerShown: false
+    }}
+  >
     <MainTab.Screen
       name="HomeStack"
       component={HomeStack}
@@ -30,7 +36,7 @@ const DefaultTab = () => (
       name="MyWorkoutStack"
       component={MyWorkoutStack}
       options={{
-        tabBarLabel: 'MyWorkoutStack'
+        tabBarLabel: 'My Workouts'
       }}
     />
   </MainTab.Navigator>

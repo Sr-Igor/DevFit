@@ -10,7 +10,15 @@ const HomeStack = () => (
   <MainStack.Navigator
     initialRouteName="Home"
     screenOptions={{
-      headerShown: false
+      headerStyle: {
+        backgroundColor: '#F2F2F2'
+      },
+      headerShadowVisible: false,
+      statusBarStyle: 'dark',
+      statusBarColor: '#F2F2F2',
+      animation: 'slide_from_right',
+      headerTitleAlign: 'center',
+      headerTitle: 'Seu progresso diário'
     }}
   >
     <MainStack.Screen name="Home" component={Home} />
