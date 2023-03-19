@@ -3,7 +3,7 @@ import * as S from './styled';
 
 //React
 import { useLayoutEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { StackActions, useNavigation } from '@react-navigation/native';
 
 //Redux
 import { setUserWorkouts } from 'store/reducers/user/actions';
@@ -21,7 +21,7 @@ import { StackScreenNavigationProp } from 'types/Navigation';
 
 //Utils
 import { defaultWorkouts } from 'presetWorkouts';
-import { generateWorkout } from 'hooks/generateWorkout';
+import { generateWorkout } from 'utils/generateWorkout';
 
 const StarterLevel = () => {
   const navigation = useNavigation<StackScreenNavigationProp>();
@@ -41,7 +41,7 @@ const StarterLevel = () => {
   }, [navigation, user.myWorkouts]);
 
   const handleNextAction = () => {
-    alert('In build...');
+    navigation.dispatch(StackActions.replace('TabDefault'));
   };
 
   const handleWorkout = (data: Workout) => {

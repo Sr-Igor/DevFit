@@ -1,11 +1,11 @@
 import { View, Text } from 'react-native';
 
-const StackDefault = () => {
+const Home = () => {
   return (
     <View>
-      <Text>Com nome</Text>
+      <Text>Home Stack Default</Text>
     </View>
   );
 };
 
-export default StackDefault;
+export default Home;
