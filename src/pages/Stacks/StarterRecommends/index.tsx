@@ -23,32 +23,32 @@ import { formatTitle } from './actions';
 import { userLevel } from './constants';
 
 const StarterLevel = () => {
-  const navigation = useNavigation<StackScreenNavigationProp>();
-  const user: User = useAppSelector((state) => state.profile);
-  const dispatch = useAppDispatch();
+  // const navigation = useNavigation<StackScreenNavigationProp>();
+  // const user: User = useAppSelector((state) => state.profile);
+  // const dispatch = useAppDispatch();
 
-  const [level, setLevel] = useState(user.level);
+  // const [level, setLevel] = useState(user.level);
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerTitle: '',
-      headerRight: () => <HeaderButton onPress={handleNextAction} />
-    });
-  }, [navigation, level]);
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerTitle: '',
+  //     headerRight: () => <HeaderButton onPress={handleNextAction} />
+  //   });
+  // }, [navigation, level]);
 
-  const handleNextAction = () => {
-    if (!level) {
-      alert('Selecione seu nível para continuar!');
-    } else {
-      dispatch(setUserLevel(level));
-      navigation.navigate('StarterRecommends');
-    }
-  };
+  // const handleNextAction = () => {
+  //   if (!level) {
+  //     alert('Selecione seu nível para continuar!');
+  //   } else {
+  //     dispatch(setUserLevel(level));
+  //     navigation.navigate('StarterDays');
+  //   }
+  // };
 
   return (
     <S.Container>
-      <DefaultTitle title={formatTitle(user.workoutDays.length)} noMargin />
-      <DefaultTitle title="Qual seu nível?" />
+      <DefaultTitle title="Start Recommends" />
+      {/* <DefaultTitle title="Qual seu nível?" />
       <S.LevelArea>
         {userLevel?.map((item, index) => (
           <DefaultButton
@@ -58,7 +58,7 @@ const StarterLevel = () => {
             bgColor={level === item.level_id ? 'selected' : 'unfilled'}
           />
         ))}
-      </S.LevelArea>
+      </S.LevelArea> */}
     </S.Container>
   );
 };

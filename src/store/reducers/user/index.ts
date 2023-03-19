@@ -27,6 +27,11 @@ export default function userReducer(state = initialState, action: Action) {
         ...state,
         workoutDays: action.payload.workoutDays
       };
+    case types.SET_USER_LEVEL:
+      return {
+        ...state,
+        level: action.payload.level
+      };
     default:
       return state;
   }

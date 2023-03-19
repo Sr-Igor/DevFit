@@ -9,3 +9,8 @@ export const setWorkoutDays = (workoutDays: number[]) => ({
   type: types.SET_WORKOUT_DAYS,
   payload: { workoutDays }
 });
+
+export const setUserLevel = (level: number) => ({
+  type: types.SET_USER_LEVEL,
+  payload: { level }
+});

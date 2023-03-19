@@ -9,6 +9,7 @@ import Starter from './Starter';
 import StarterName from './StarterName';
 import StarterDays from './StarterDays';
 import StarterLevel from './StarterLevel';
+import StarterRecommends from './StarterRecommends';
 
 const MainStack = createNativeStackNavigator<RootStackParamList>();
 
@@ -29,6 +30,7 @@ const DefaultStack = () => (
     <MainStack.Screen name="StarterName" component={StarterName} />
     <MainStack.Screen name="StarterDays" component={StarterDays} />
     <MainStack.Screen name="StarterLevel" component={StarterLevel} />
+    <MainStack.Screen name="StarterRecommends" component={StarterRecommends} />
   </MainStack.Navigator>
 );
 
