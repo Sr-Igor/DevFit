@@ -1,4 +1,5 @@
 import * as types from './types';
+import { Workout } from 'types/workout';
 
 export const setUserName = (name: string) => ({
   type: types.SET_USER_NAME,
@@ -13,4 +14,9 @@ export const setWorkoutDays = (workoutDays: number[]) => ({
 export const setUserLevel = (level: number) => ({
   type: types.SET_USER_LEVEL,
   payload: { level }
+});
+
+export const setUserWorkouts = (myWorkouts: Workout[]) => ({
+  type: types.SET_WORKOUTS_USER,
+  payload: { myWorkouts }
 });

@@ -6,59 +6,72 @@ import { useLayoutEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 //Redux
-import { setUserLevel } from 'store/reducers/user/actions';
+import { setUserWorkouts } from 'store/reducers/user/actions';
 import { useAppDispatch, useAppSelector } from 'hooks/redux-hook';
 
 //Components
 import DefaultButton from 'components/Button';
 import DefaultTitle from 'components/Title';
 import HeaderButton from 'components/HeaderButton';
+import WorkoutItem from 'components/WorkoutItem';
 
 //Types
 import { User } from 'types/user';
 import { StackScreenNavigationProp } from 'types/Navigation';
+import { Workout } from 'types/workout';
 
 //Utils
-import { formatTitle } from './actions';
-import { userLevel } from './constants';
+import { defaultWorkouts } from 'presetWorkouts';
+import { generateWorkout } from 'hooks/generateWorkout';
 
 const StarterLevel = () => {
-  // const navigation = useNavigation<StackScreenNavigationProp>();
-  // const user: User = useAppSelector((state) => state.profile);
-  // const dispatch = useAppDispatch();
+  const navigation = useNavigation<StackScreenNavigationProp>();
+  const user: User = useAppSelector((state) => state.profile);
+  const dispatch = useAppDispatch();
 
   // const [level, setLevel] = useState(user.level);
 
-  // useLayoutEffect(() => {
-  //   navigation.setOptions({
-  //     headerTitle: '',
-  //     headerRight: () => <HeaderButton onPress={handleNextAction} />
-  //   });
-  // }, [navigation, level]);
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: '',
+      headerRight: () => <HeaderButton onPress={handleNextAction} />
+    });
+  }, [navigation]);
 
-  // const handleNextAction = () => {
-  //   if (!level) {
-  //     alert('Selecione seu nível para continuar!');
-  //   } else {
-  //     dispatch(setUserLevel(level));
-  //     navigation.navigate('StarterDays');
-  //   }
-  // };
+  const handleNextAction = () => {
+    // if (!level) {
+    //   alert('Selecione seu nível para continuar!');
+    // } else {
+    //   dispatch(setUserLevel(level));
+    //   navigation.navigate('StarterDays');
+    // }
+  };
+
+  const handleWorkout = (data: Workout) => {
+    const newUserWorkout = generateWorkout(data, user.myWorkouts);
+    dispatch(setUserWorkouts(newUserWorkout));
+  };
 
   return (
     <S.Container>
-      <DefaultTitle title="Start Recommends" />
-      {/* <DefaultTitle title="Qual seu nível?" />
-      <S.LevelArea>
-        {userLevel?.map((item, index) => (
-          <DefaultButton
-            key={index}
-            text={item.level_name}
-            onPress={() => setLevel(item.level_id)}
-            bgColor={level === item.level_id ? 'selected' : 'unfilled'}
+      <DefaultTitle title="Opções de treino para o seu nível" noMargin />
+      <DefaultTitle
+        title={`Você selecionou ${user.myWorkouts?.length || 0} ${
+          user?.myWorkouts?.length > 1 ? 'treinos' : 'treinos'
+        }`}
+        small
+      />
+      <S.WorkoutList
+        data={defaultWorkouts}
+        renderItem={({ item }) => (
+          <WorkoutItem
+            onPress={(data) => handleWorkout(data)}
+            userWorkouts={user.myWorkouts || []}
+            data={item as Workout}
           />
-        ))}
-      </S.LevelArea> */}
+        )}
+        keyExtractor={(item, index) => index.toString()}
+      />
     </S.Container>
   );
 };

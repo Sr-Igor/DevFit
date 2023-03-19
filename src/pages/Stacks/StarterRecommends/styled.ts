@@ -9,29 +9,8 @@ export const Container = styled.SafeAreaView`
   `}
 `;
 
-export const NameInput = styled.TextInput`
-  ${({ theme }) => css`
-    border: 1px solid ${theme.colors.gray};
-    width: 100%;
-    height: 50px;
-    border-radius: ${theme.border.radius};
-    margin-top: ${theme.spacings.xxlarge};
-    font-size: ${theme.font.sizes.medium};
-    padding: 0px ${theme.spacings.xsmall};
-  `}
-`;
-
-export const ConfigArea = styled.View`
+export const WorkoutList = styled.FlatList`
   ${({ theme }) => css`
     width: 100%;
-    margin-top: ${theme.spacings.xxlarge};
-  `}
-`;
-
-export const LevelArea = styled.View`
-  ${({ theme }) => css`
-    width: 100%;
-    gap: ${theme.spacings.small};
-    margin-top: ${theme.spacings.large};
   `}
 `;
