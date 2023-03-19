@@ -35,7 +35,7 @@ export default function userReducer(state = initialState, action: Action) {
     case types.SET_WORKOUTS_USER:
       return {
         ...state,
-        level: action.payload.myWorkouts
+        myWorkouts: action.payload.myWorkouts
       };
     default:
       return state;

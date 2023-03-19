@@ -1,8 +1,14 @@
-import { Workout } from 'types/workout';
+//Styled
 import * as S from './styled';
-import { formatMuscleImage } from './actions';
+
+//React
 import { useEffect, useState } from 'react';
-import { User } from 'types/user';
+
+//Types
+import { Workout } from 'types/workout';
+
+//Actions
+import { formatMuscleImage } from './actions';
 
 export type WorkoutItemProps = {
   data: Workout;
