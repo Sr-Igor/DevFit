@@ -1,10 +1,10 @@
-import { View, TouchableHighlight, Text } from 'react-native';
-import { styles } from './style';
+import * as S from './style';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+import { iconGenerate } from './actions';
 
 const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
   return (
-    <View style={styles.container}>
+    <S.Container>
       {state.routes.map((route, index: number) => {
         const { options } = descriptors[route.key];
 
@@ -21,38 +21,29 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
 
         const isFocused = state.index === index;
 
-        if (route.name === 'Default') {
+        if (route.name === 'WorkoutStack') {
           return (
-            <TouchableHighlight
-              style={styles.middleTab}
+            <S.MiddleTab
               key={index}
               onPress={handleTabPress}
+              isFocused={isFocused}
+              underlayColor="none"
             >
-              <Text
-                style={[styles.label, isFocused ? styles.labelFocused : null]}
-              >
-                {label as string}
-              </Text>
-            </TouchableHighlight>
+              <S.TabMiddleIcon source={iconGenerate(route.name)} />
+            </S.MiddleTab>
           );
         } else {
           return (
-            <TouchableHighlight
-              style={styles.tab}
-              key={index}
-              underlayColor="transparent"
-              onPress={handleTabPress}
-            >
-              <Text
-                style={[styles.label, isFocused ? styles.labelFocused : null]}
-              >
-                {label as string}
-              </Text>
-            </TouchableHighlight>
+            <S.Tab key={index} underlayColor="transparent" onPress={handleTabPress}>
+              <>
+                <S.TabIcon source={iconGenerate(route.name)} />
+                <S.Label isFocused={isFocused}>{label as string}</S.Label>
+              </>
+            </S.Tab>
           );
         }
       })}
-    </View>
+    </S.Container>
   );
 };
 

@@ -10,27 +10,28 @@ import WorkoutStack from './WorkoutStack';
 import MyWorkoutStack from './MyWorkoutStack';
 
 const DefaultTab = () => (
-  <MainTab.Navigator initialRouteName="Default" tabBar={(props) => <TabBar {...props} />}>
-    <MainTab.Screen
-      name="WorkoutStack"
-      component={WorkoutStack}
-      // options={{
-      //   tabBarLabel: 'Tab 1'
-      // }}
-    />
+  <MainTab.Navigator initialRouteName="WorkoutStack" tabBar={(props) => <TabBar {...props} />}>
     <MainTab.Screen
       name="HomeStack"
       component={HomeStack}
-      // options={{
-      //   tabBarLabel: 'Default'
-      // }}
+      options={{
+        tabBarLabel: 'Home'
+      }}
     />
+    <MainTab.Screen
+      name="WorkoutStack"
+      component={WorkoutStack}
+      options={{
+        tabBarLabel: 'WorkoutStack'
+      }}
+    />
+
     <MainTab.Screen
       name="MyWorkoutStack"
       component={MyWorkoutStack}
-      // options={{
-      //   tabBarLabel: 'Tab 2'
-      // }}
+      options={{
+        tabBarLabel: 'MyWorkoutStack'
+      }}
     />
   </MainTab.Navigator>
 );

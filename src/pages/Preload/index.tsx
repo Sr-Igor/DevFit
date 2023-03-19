@@ -12,12 +12,12 @@ const PreloadScreen = () => {
   const user: User = useAppSelector((state) => state.profile);
   const navigation = useNavigation();
 
-  if (!user.name) {
-    //TODO: Verify All User Data
-    navigation.dispatch(StackActions.replace('StackDefault'));
-  } else {
-    navigation.dispatch(StackActions.replace('TabDefault'));
-  }
+  // if (!user.name) {
+  //   //TODO: Verify All User Data
+  //   navigation.dispatch(StackActions.replace('StackDefault'));
+  // } else {
+  navigation.dispatch(StackActions.replace('TabDefault'));
+  // }
 
   return null;
 };

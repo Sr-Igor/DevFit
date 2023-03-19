@@ -1,32 +1,47 @@
-import { StyleSheet } from 'react-native';
+import styled, { css } from 'styled-components/native';
 
-export const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    backgroundColor: '#ccc'
-  },
-  tab: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 50
-  },
-  middleTab: {
-    height: 70,
-    width: 70,
-    backgroundColor: '#f2a900',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: -20,
-    borderRadius: 35
-  },
-  label: {
-    fontSize: 16,
-    color: '#fff',
-    fontWeight: 'bold'
-  },
-  labelFocused: {
-    color: '#0000ff',
-    fontSize: 16
-  }
-});
+export const Container = styled.SafeAreaView`
+  ${({ theme }) => css`
+    flex-direction: row;
+    background-color: ${theme.colors.lightGray};
+  `}
+`;
+
+export const Tab = styled.TouchableHighlight`
+  ${({ theme }) => css`
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: 55;
+  `}
+`;
+
+export const MiddleTab = styled.TouchableHighlight<{ isFocused: boolean }>`
+  ${({ theme, isFocused }) => css`
+    height: 70px;
+    width: 70px;
+    background-color: ${!isFocused ? theme.colors.red : theme.colors.primary};
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+    border-radius: 35px;
+  `}
+`;
+
+export const Label = styled.Text<{ isFocused: boolean }>`
+  ${({ theme, isFocused }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    font-weight: ${theme.font.bold};
+    color: ${!isFocused ? theme.colors.gray : theme.colors.primary};
+  `}
+`;
+
+export const TabIcon = styled.Image`
+  width: 20px;
+  height: 20px;
+`;
+
+export const TabMiddleIcon = styled.Image`
+  width: 40px;
+  height: 40px;
+`;
