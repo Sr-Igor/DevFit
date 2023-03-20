@@ -12,7 +12,7 @@ export const Tab = styled.TouchableHighlight`
     flex: 1;
     align-items: center;
     justify-content: center;
-    height: 55;
+    height: 55px;
   `}
 `;
 

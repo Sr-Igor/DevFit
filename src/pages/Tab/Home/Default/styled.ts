@@ -2,14 +2,16 @@ import styled, { css } from 'styled-components/native';
 
 export const Container = styled.SafeAreaView`
   ${({ theme }) => css`
-    flex: 1;
+    /* flex: 1; */
     background-color: ${theme.colors.lightBg};
-    /* align-items: center; */
-    padding: ${theme.spacings.medium};
   `}
 `;
 
-export const LegendArea = styled.View``;
+export const LegendArea = styled.View`
+  ${({ theme }) => css`
+    padding: ${theme.spacings.medium};
+  `}
+`;
 
 export const LegendText = styled.Text`
   ${({ theme }) => css`

@@ -11,7 +11,7 @@ import MyWorkoutStack from './MyWorkoutStack';
 
 const DefaultTab = () => (
   <MainTab.Navigator
-    initialRouteName="WorkoutStack"
+    initialRouteName="Home"
     tabBar={(props) => <TabBar {...props} />}
     screenOptions={{
       headerShown: false
