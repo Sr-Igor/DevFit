@@ -29,16 +29,18 @@ const DayScroll = ({
 
   const handleScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     const index = Math.round(e.nativeEvent.contentOffset.x / dayW);
-    setSelectedDay(index);
+    setSelectedDay(index + 1);
   };
 
   const DayRef = useRef(null);
+
   const scrollToDay = (day: number) => {
     const current = DayRef.current;
-    current.scrollTo({
-      x: day * dayW,
+    current!.scrollTo({
+      x: (day - 1) * dayW,
       animated: true
     });
+    setSelectedDay(day);
   };
 
   useEffect(() => {
@@ -76,6 +78,8 @@ const DayScroll = ({
           dailyProgress={dailyProgress}
           workoutDays={workoutDays}
           onPress={() => scrollToDay(day)}
+          dayWidth={dayW}
+          isSelected={day === selectedDay}
         />
       ))}
     </S.Container>

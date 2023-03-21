@@ -37,6 +37,9 @@ const Home = () => {
       />
       <DayStatus />
 
+      <S.LegendTitle>Mes: {selectedMonth}</S.LegendTitle>
+      <S.LegendTitle>Dia: {selectedDay}</S.LegendTitle>
+
       <S.LegendArea>
         <S.LegendText>Legendas:</S.LegendText>
         {legends.map((legend, index) => (
