@@ -1,13 +1,16 @@
 import * as S from './styled';
+
+import { useLayoutEffect, useState } from 'react';
+import { useAppSelector } from 'hooks/redux-hook';
 import { useNavigation } from '@react-navigation/native';
-import { useLayoutEffect } from 'react';
-import ConfgButton from 'components/ConfigButton';
-import MonthScroll from 'components/MonthScroll';
+
 import DayScroll from 'components/DayScroll';
 import DayStatus from 'components/DayStatus';
+import MonthScroll from 'components/MonthScroll';
+import ConfgButton from 'components/ConfigButton';
+
 import { legends } from './constants';
-import { useState } from 'react';
-import { useAppSelector } from 'hooks/redux-hook';
+
 import { User } from 'types/user';
 
 const Home = () => {
@@ -37,8 +40,8 @@ const Home = () => {
       />
       <DayStatus />
 
-      <S.LegendTitle>Mes: {selectedMonth}</S.LegendTitle>
-      <S.LegendTitle>Dia: {selectedDay}</S.LegendTitle>
+      {/* <S.LegendTitle>Mes: {selectedMonth}</S.LegendTitle>
+      <S.LegendTitle>Dia: {selectedDay}</S.LegendTitle> */}
 
       <S.LegendArea>
         <S.LegendText>Legendas:</S.LegendText>

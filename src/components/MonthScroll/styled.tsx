@@ -6,7 +6,7 @@ export const Container = styled.ScrollView`
 `;
 
 export const MonthButton = styled.TouchableHighlight<{ width: number }>`
-  ${({ theme, width }) => css`
+  ${({ width }) => css`
     width: ${`${width}px`};
     justify-content: center;
     align-items: center;

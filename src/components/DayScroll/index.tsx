@@ -1,9 +1,12 @@
 import * as S from './styled';
 
-import { useRef, useEffect, useState } from 'react';
 import { Dimensions } from 'react-native';
+import { ScrollView } from 'react-native/types';
+import { useRef, useEffect, useState } from 'react';
+
 import { NativeSyntheticEvent } from 'react-native/Libraries/Types/CoreEventTypes';
 import { NativeScrollEvent } from 'react-native/Libraries/Components/ScrollView/ScrollView';
+
 import Day from 'components/Day';
 
 type DayScrollProps = {
@@ -32,7 +35,7 @@ const DayScroll = ({
     setSelectedDay(index + 1);
   };
 
-  const DayRef = useRef(null);
+  const DayRef = useRef<ScrollView>(null);
 
   const scrollToDay = (day: number) => {
     const current = DayRef.current;

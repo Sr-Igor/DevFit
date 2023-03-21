@@ -1,6 +1,6 @@
 import * as S from './style';
-import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { iconGenerate } from './actions';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
   return (
