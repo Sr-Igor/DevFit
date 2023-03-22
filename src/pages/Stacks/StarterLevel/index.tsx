@@ -20,7 +20,7 @@ import { StackScreenNavigationProp } from 'types/Navigation';
 
 //Utils
 import { formatTitle } from './actions';
-import { userLevel } from './constants';
+import { userLevel } from 'utils/constants';
 
 const StarterLevel = () => {
   const navigation = useNavigation<StackScreenNavigationProp>();

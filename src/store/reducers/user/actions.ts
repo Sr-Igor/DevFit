@@ -25,3 +25,7 @@ export const setDailyProgress = (dailyProgress: string[]) => ({
   type: types.SET_DAILY_PROGRESS,
   payload: { dailyProgress }
 });
+
+export const resetUser = () => ({
+  type: types.RESET_USER
+});

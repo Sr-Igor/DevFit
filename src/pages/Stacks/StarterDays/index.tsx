@@ -19,7 +19,7 @@ import { User } from 'types/user';
 import { StackScreenNavigationProp } from 'types/Navigation';
 
 //Utils
-import { days } from './constants';
+import { days } from 'utils/constants';
 
 const StarterDays = () => {
   const user: User = useAppSelector((state) => state.profile);

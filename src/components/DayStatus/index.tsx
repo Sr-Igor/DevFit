@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { formatDate } from 'utils/formatDate';
 import { BallonConfigs, formatBallon } from './actions';
 import DefaultButton from 'components/Button';
+import { endToDate } from 'utils/formatDate';
 
 type DayStatus = {
   selectedMonth: number;
@@ -46,11 +47,24 @@ const DayStatus = ({
     }
   };
 
+  const [timeLeft, setTimeLeft] = useState('');
+  useEffect(() => {
+    const timerFunc = () => {
+      setTimeLeft(endToDate());
+    };
+
+    const timer = setInterval(timerFunc, 1000);
+    timerFunc();
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <S.Container>
       <S.BallonArrow />
       <S.BallonArea>
         <S.BallonBigText>{configs.text}</S.BallonBigText>
+        {configs.isToday && <S.BallonBigText>{timeLeft}</S.BallonBigText>}
         {configs.button && (
           <DefaultButton
             text={configs.button}

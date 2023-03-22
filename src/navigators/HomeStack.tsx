@@ -1,6 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from 'pages/Tab/Home/Default';
+import Config from 'pages/Tab/Home/Configs';
 
 import { HomeStackParamList } from 'types/Home';
 
@@ -22,6 +23,7 @@ const HomeStack = () => (
     }}
   >
     <MainStack.Screen name="Home" component={Home} />
+    <MainStack.Screen name="Config" component={Config} />
   </MainStack.Navigator>
 );
 

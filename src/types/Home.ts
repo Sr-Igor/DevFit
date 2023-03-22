@@ -7,12 +7,13 @@ import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 export type HomeStackParamList = {
   //Hight Order
   Home: undefined;
+  Config: undefined;
 };
 
 //Default Stack Types
-export type StackScreenRouteProp = RouteProp<HomeStackParamList, 'Home'>;
+export type StackScreenRouteProp = RouteProp<HomeStackParamList, 'Home' | 'Config'>;
 
 export type StackScreenNavigationProp = CompositeNavigationProp<
-  StackNavigationProp<HomeStackParamList, 'Home'>,
+  StackNavigationProp<HomeStackParamList, 'Home' | 'Config'>,
   BottomTabNavigationProp<HomeStackParamList>
 >;

@@ -13,17 +13,18 @@ import { useAppSelector, useAppDispatch } from 'hooks/redux-hook';
 import DayStatus from 'components/DayStatus';
 import DayScroll from 'components/DayScroll';
 import MonthScroll from 'components/MonthScroll';
-import ConfgButton from 'components/ConfigButton';
+import ConfigButton from 'components/ConfigButton';
 
 //Utils
-import { legends } from './constants';
+import { legends } from '../../../../utils/constants';
 import { generateProgress } from 'utils/generateProgress';
 
 //Types
 import { User } from 'types/user';
+import { StackScreenNavigationProp } from 'types/Home';
 
 const Home = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<StackScreenNavigationProp>();
   const dispatch = useAppDispatch();
 
   const user: User = useAppSelector((state) => state.profile);
@@ -34,7 +35,13 @@ const Home = () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerRight: () => <ConfgButton />
+      headerRight: () => (
+        <ConfigButton
+          onPress={() => {
+            navigation.navigate('Config');
+          }}
+        />
+      )
     });
   }, [navigation]);
 

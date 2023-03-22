@@ -42,6 +42,8 @@ export default function userReducer(state = initialState, action: Action) {
         ...state,
         dailyProgress: action.payload.dailyProgress
       };
+    case types.RESET_USER:
+      return initialState;
     default:
       return state;
   }

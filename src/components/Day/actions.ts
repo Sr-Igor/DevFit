@@ -1,5 +1,5 @@
 import { formatDate } from 'utils/formatDate';
-import { legends } from 'pages/Tab/Home/Default/constants';
+import { legends } from 'utils/constants';
 
 export const formatedBallDay = (
   day: number,
