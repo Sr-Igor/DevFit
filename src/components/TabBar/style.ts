@@ -8,12 +8,10 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Tab = styled.TouchableHighlight`
-  ${({ theme }) => css`
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    height: 55px;
-  `}
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
 `;
 
 export const MiddleTab = styled.TouchableHighlight<{ isFocused: boolean }>`

@@ -1,12 +1,16 @@
+//Styles
 import * as S from './styled';
 
+//React
 import { Dimensions } from 'react-native';
 import { ScrollView } from 'react-native/types';
 import { useRef, useEffect, useState } from 'react';
 
+//Types
 import { NativeSyntheticEvent } from 'react-native/Libraries/Types/CoreEventTypes';
 import { NativeScrollEvent } from 'react-native/Libraries/Components/ScrollView/ScrollView';
 
+//Components
 import Day from 'components/Day';
 
 type DayScrollProps = {

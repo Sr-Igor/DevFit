@@ -1,12 +1,16 @@
+//Styles
 import * as S from './styled';
 
+//React
 import { useRef, useEffect } from 'react';
 import { Dimensions } from 'react-native';
 import { ScrollView } from 'react-native/types';
 
+//Types
 import { NativeSyntheticEvent } from 'react-native/Libraries/Types/CoreEventTypes';
 import { NativeScrollEvent } from 'react-native/Libraries/Components/ScrollView/ScrollView';
 
+//Utils
 import { months } from './constants';
 
 type MonthScrollProps = {
@@ -27,7 +31,7 @@ const MonthScroll = ({ selectedMonth, setSelectedMonth }: MonthScrollProps) => {
 
   const scrollToMonth = (month: number) => {
     const current = MonthRef.current;
-    current.scrollTo({
+    current!.scrollTo({
       x: month * thirdW,
       animated: true
     });

@@ -37,6 +37,11 @@ export default function userReducer(state = initialState, action: Action) {
         ...state,
         myWorkouts: action.payload.myWorkouts
       };
+    case types.SET_DAILY_PROGRESS:
+      return {
+        ...state,
+        dailyProgress: action.payload.dailyProgress
+      };
     default:
       return state;
   }

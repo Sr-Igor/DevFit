@@ -4,7 +4,7 @@ export type ButtonProps = {
   text: string;
   onPress: () => void;
   textColor?: 'ligth' | 'dark';
-  bgColor?: 'ligth' | 'dark' | 'unfilled' | 'selected';
+  bgColor?: 'ligth' | 'dark' | 'unfilled' | 'selected' | 'secondary';
   width?: string;
 };
 

@@ -13,9 +13,9 @@ export const formatedBallDay = (
 
   let backgroundColor = null;
 
-  if (workoutDays.includes(thisDate.getDay())) {
+  if (workoutDays?.includes(thisDate.getDay())) {
     if (thisDate.getTime() < today.getTime()) {
-      if (dailyProgress.includes(formatDate(thisDate))) {
+      if (dailyProgress?.includes(formatDate(thisDate))) {
         backgroundColor = legends[1].color;
       } else {
         backgroundColor = legends[2].color;

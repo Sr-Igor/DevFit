@@ -20,3 +20,8 @@ export const setUserWorkouts = (myWorkouts: Workout[]) => ({
   type: types.SET_WORKOUTS_USER,
   payload: { myWorkouts }
 });
+
+export const setDailyProgress = (dailyProgress: string[]) => ({
+  type: types.SET_DAILY_PROGRESS,
+  payload: { dailyProgress }
+});

@@ -1,20 +1,30 @@
+//Styles
 import * as S from './styled';
 
+//React
 import { useLayoutEffect, useState } from 'react';
-import { useAppSelector } from 'hooks/redux-hook';
 import { useNavigation } from '@react-navigation/native';
 
-import DayScroll from 'components/DayScroll';
+//Redux
+import { setDailyProgress } from 'store/reducers/user/actions';
+import { useAppSelector, useAppDispatch } from 'hooks/redux-hook';
+
+//Components
 import DayStatus from 'components/DayStatus';
+import DayScroll from 'components/DayScroll';
 import MonthScroll from 'components/MonthScroll';
 import ConfgButton from 'components/ConfigButton';
 
+//Utils
 import { legends } from './constants';
+import { generateProgress } from 'utils/generateProgress';
 
+//Types
 import { User } from 'types/user';
 
 const Home = () => {
   const navigation = useNavigation();
+  const dispatch = useAppDispatch();
 
   const user: User = useAppSelector((state) => state.profile);
   const today = new Date();
@@ -28,6 +38,15 @@ const Home = () => {
     });
   }, [navigation]);
 
+  const handleDailyProgress = (date: string) => {
+    const newProgress = generateProgress(user.dailyProgress, date);
+    dispatch(setDailyProgress(newProgress));
+  };
+
+  const goToWorkout = () => {
+    alert('goToWorkout');
+  };
+
   return (
     <S.Container>
       <MonthScroll selectedMonth={selectedMonth} setSelectedMonth={setSelectedMonth} />
@@ -38,10 +57,15 @@ const Home = () => {
         dailyProgress={user.dailyProgress}
         workoutDays={user.workoutDays}
       />
-      <DayStatus />
-
-      {/* <S.LegendTitle>Mes: {selectedMonth}</S.LegendTitle>
-      <S.LegendTitle>Dia: {selectedDay}</S.LegendTitle> */}
+      <DayStatus
+        selectedMonth={selectedMonth}
+        selectedDay={selectedDay}
+        // setSelectedDay={setSelectedDay}
+        dailyProgress={user.dailyProgress}
+        workoutDays={user.workoutDays}
+        handleDailyProgress={handleDailyProgress}
+        goToWorkout={goToWorkout}
+      />
 
       <S.LegendArea>
         <S.LegendText>Legendas:</S.LegendText>

@@ -13,6 +13,9 @@ const ButtonAreaModifiers = {
   `,
   selected: (theme: DefaultTheme) => css`
     background-color: ${theme.colors.red};
+  `,
+  secondary: (theme: DefaultTheme) => css`
+    background-color: ${theme.colors.secondary};
   `
 };
 
