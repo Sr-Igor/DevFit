@@ -20,7 +20,7 @@ import { Workout } from 'types/workout';
 import { StackScreenNavigationProp } from 'types/Navigation';
 
 //Utils
-import { defaultWorkouts } from 'presetWorkouts';
+import { defaultWorkouts } from 'utils/presetWorkouts';
 import { generateWorkout } from 'utils/generateWorkout';
 
 const StarterLevel = () => {

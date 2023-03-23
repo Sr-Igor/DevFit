@@ -11,8 +11,44 @@ export const defaultWorkouts: Workout[] = [
     recommendedLevel: 1
   },
   {
-    id: 231,
+    id: 2311,
     name: 'Treino Iniciante A2',
+    exercises: [
+      { id: 1, name: 'Supino Inclinado', muscle: 'chest', sets: 3, reps: 10, load: 20 },
+      { id: 2, name: 'Ex 2', muscle: 'biceps', sets: 2, reps: 12, load: 10 }
+    ],
+    recommendedLevel: 1
+  },
+  {
+    id: 2312,
+    name: 'Treino Iniciante A3',
+    exercises: [
+      { id: 1, name: 'Supino Inclinado', muscle: 'chest', sets: 3, reps: 10, load: 20 },
+      { id: 2, name: 'Ex 2', muscle: 'biceps', sets: 2, reps: 12, load: 10 }
+    ],
+    recommendedLevel: 1
+  },
+  {
+    id: 2313,
+    name: 'Treino Iniciante A4',
+    exercises: [
+      { id: 1, name: 'Supino Inclinado', muscle: 'chest', sets: 3, reps: 10, load: 20 },
+      { id: 2, name: 'Ex 2', muscle: 'biceps', sets: 2, reps: 12, load: 10 }
+    ],
+    recommendedLevel: 1
+  },
+  {
+    id: 2314,
+    name: 'Treino Iniciante A5',
+    exercises: [
+      { id: 1, name: 'Supino Inclinado', muscle: 'chest', sets: 3, reps: 10, load: 20 },
+      { id: 2, name: 'Ex 2', muscle: 'biceps', sets: 2, reps: 12, load: 10 }
+    ],
+    recommendedLevel: 1
+  },
+  {
+    id: 2315,
+    name: 'Treino Iniciante A6',
     exercises: [
       { id: 1, name: 'Supino Inclinado', muscle: 'chest', sets: 3, reps: 10, load: 20 },
       { id: 2, name: 'Ex 2', muscle: 'biceps', sets: 2, reps: 12, load: 10 }

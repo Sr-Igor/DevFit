@@ -1,10 +1,51 @@
-import { View, Text } from 'react-native';
+import { useAppSelector, useAppDispatch } from 'hooks/redux-hook';
+import { User } from 'types/user';
+import { Workout } from 'types/workout';
+import { setUserWorkouts } from 'store/reducers/user/actions';
+import WorkoutItem from 'components/WorkoutItem';
+import * as S from './styled';
+import { useNavigation } from '@react-navigation/native';
+import { useLayoutEffect } from 'react';
+import AddButton from 'components/AddButton';
+import { StackScreenNavigationProp } from 'types/MyWorkouts';
 
 const MyWorkouts = () => {
+  const user: User = useAppSelector((state) => state.profile);
+  const dispatch = useAppDispatch();
+  const navigation = useNavigation<StackScreenNavigationProp>();
+
+  const handleDelete = (data: Workout) => {
+    const workouts = user.myWorkouts.filter((item) => +item.id !== +data.id);
+    dispatch(setUserWorkouts(workouts));
+  };
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: 'Meus treinos',
+      headerRight: () => <AddButton onPress={() => actionWorkout()} />
+    });
+  }, [navigation]);
+
+  const actionWorkout = (id?: number) => {
+    navigation.navigate('ActionWorkout', { id: id || null });
+  };
+
   return (
-    <View>
-      <Text>My Workouts Stack Default</Text>
-    </View>
+    <S.Container>
+      <S.WorkoutList
+        data={user.myWorkouts}
+        renderItem={({ item }) => (
+          <WorkoutItem
+            onPress={(data) => actionWorkout(data.id)}
+            userWorkouts={user.myWorkouts || []}
+            data={item as Workout}
+            isEditable
+            onDelete={(data) => handleDelete(data)}
+          />
+        )}
+        keyExtractor={(item, index) => index.toString()}
+      />
+    </S.Container>
   );
 };
 

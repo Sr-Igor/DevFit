@@ -10,6 +10,7 @@ export const Container = styled.SafeAreaView`
     border: 1px solid ${theme.colors.gray};
     margin-top: ${theme.spacings.xsmall};
     flex-direction: row;
+    height: 105px;
   `}
 `;
 
