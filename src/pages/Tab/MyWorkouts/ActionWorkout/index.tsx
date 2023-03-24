@@ -10,6 +10,7 @@ import { useLayoutEffect, useState } from 'react';
 import { User } from 'types/user';
 import DefaultButton from 'components/Button';
 import { Exercise as ExerciseType } from 'types/workout';
+import Modal from 'components/Modal';
 
 const ActionWorkout = () => {
   const route = useRoute<StackScreenRouteProp>();
@@ -22,6 +23,8 @@ const ActionWorkout = () => {
   //Form States
   const [name, setName] = useState(workout?.name || '');
   const [exercices, setExercices] = useState(workout?.exercises || []);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [editableExercise, setEditableExercise] = useState<ExerciseType | null>(null);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -38,7 +41,8 @@ const ActionWorkout = () => {
   }, [navigation, route.params?.id]);
 
   const editAction = (exercise: ExerciseType) => {
-    alert('In build...');
+    setEditableExercise(exercise);
+    setModalVisible(true);
   };
 
   const delAction = (exercise: ExerciseType) => {
@@ -47,26 +51,35 @@ const ActionWorkout = () => {
   };
 
   return (
-    <S.Container>
-      <S.InputName
-        value={name}
-        onChangeText={(text) => setName(text)}
-        placeholder="Digite o do treino"
-      />
-      <DefaultButton text="Adicionar exercício" onPress={() => alert('In build...')} />
+    <>
+      <S.Container>
+        <S.InputName
+          value={name}
+          onChangeText={(text) => setName(text)}
+          placeholder="Digite o do treino"
+        />
+        <DefaultButton text="Adicionar exercício" onPress={() => setModalVisible(true)} />
 
-      <S.ExerciceArea
-        data={exercices as ExerciseType[]}
-        keyExtractor={(item) => item?.id}
-        renderItem={({ item }) => (
-          <ExerciceItem
-            exercise={item as ExerciseType}
-            editAction={editAction}
-            delAction={delAction}
-          />
-        )}
-      />
-    </S.Container>
+        <S.ExerciceArea
+          data={exercices as ExerciseType[]}
+          keyExtractor={(item) => item?.id}
+          renderItem={({ item }) => (
+            <ExerciceItem
+              exercise={item as ExerciseType}
+              editAction={editAction}
+              delAction={delAction}
+            />
+          )}
+        />
+      </S.Container>
+      <Modal isOpen={modalVisible} onClose={() => setModalVisible(false)}>
+        <S.InputName
+          value={name}
+          onChangeText={(text) => setName(text)}
+          placeholder="Digite o do treino"
+        />
+      </Modal>
+    </>
   );
 };
 
