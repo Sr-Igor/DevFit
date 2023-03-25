@@ -1,15 +1,15 @@
 export type Exercise = {
-  id: number;
+  id?: number;
   name: string;
   muscle: string;
-  sets: number;
-  reps: number;
-  load: number;
+  sets?: number | string;
+  reps?: number | string;
+  load?: number | string;
 };
 
 export type Workout = {
   id: number;
   name: string;
-  recommendedLevel: number;
   exercises: Exercise[];
+  recommendedLevel?: number;
 };

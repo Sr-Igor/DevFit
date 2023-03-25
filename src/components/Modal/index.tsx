@@ -1,5 +1,7 @@
 import * as S from './styled';
 
+import { Platform } from 'react-native';
+
 type ModalProps = {
   children: React.ReactNode;
   isOpen: boolean;
@@ -9,7 +11,7 @@ type ModalProps = {
 const Modal = ({ children, isOpen, onClose }: ModalProps) => {
   return (
     <S.Modal visible={isOpen} animationType="fade" transparent onRequestClose={onClose}>
-      <S.ModalContainer>
+      <S.ModalContainer behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <S.ModalBox>
           <S.ModalCloser>
             <S.CloseText onPress={onClose}>Fechar</S.CloseText>

@@ -21,10 +21,8 @@ export const ModalBox = styled.View`
 `;
 
 export const ModalCloser = styled.TouchableOpacity`
-  ${({ theme }) => css`
-    align-self: flex-end;
-    height: 40px;
-  `}
+  align-self: flex-end;
+  height: 40px;
 `;
 
 export const CloseText = styled.Text`

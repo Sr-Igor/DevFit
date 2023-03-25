@@ -58,3 +58,14 @@ export const days = [
   { id: 6, name: 'Sexta' },
   { id: 7, name: 'Sábado' }
 ];
+
+export const muscles = [
+  'chest',
+  'biceps',
+  'triceps',
+  'back',
+  'shoulders',
+  'legs',
+  'abs',
+  'gluteos'
+];
