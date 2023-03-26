@@ -2,23 +2,17 @@ import styled, { css } from 'styled-components/native';
 
 export const Container = styled.SafeAreaView`
   ${({ theme }) => css`
-    /* width: 100%; */
     padding: 0px ${theme.spacings.xsmall};
-    /* flex: 1; */
   `}
 `;
 
 export const WorkoutList = styled.FlatList`
-  ${({ theme }) => css`
-    width: 100%;
-    /* padding: 0px ${theme.spacings.xsmall}; */
-  `}
+  width: 100%;
 `;
 
 export const LastWokoutArea = styled.View`
   ${({ theme }) => css`
     width: 100%;
-    /* padding: 0px ${theme.spacings.xsmall}; */
     height: 140px;
     margin-bottom: ${theme.spacings.xsmall};
   `}

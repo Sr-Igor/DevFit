@@ -1,14 +1,22 @@
+//Styled
 import * as S from './styled';
+
+//React
 import { useEffect, useState } from 'react';
-import { formatDate } from 'utils/formatDate';
-import { BallonConfigs, formatBallon } from './actions';
+
+//Components
 import DefaultButton from 'components/Button';
+
+//Utils
+import { formatDate } from 'utils/formatDate';
 import { endToDate } from 'utils/formatDate';
+
+//Actions
+import { BallonConfigs, formatBallon } from './actions';
 
 type DayStatus = {
   selectedMonth: number;
   selectedDay: number;
-  // setSelectedDay: (day: number) => void;
   dailyProgress: string[];
   workoutDays: number[];
   handleDailyProgress: (date: string) => void;
@@ -18,7 +26,6 @@ type DayStatus = {
 const DayStatus = ({
   selectedMonth,
   selectedDay,
-  // setSelectedDay,
   dailyProgress,
   workoutDays,
   handleDailyProgress,

@@ -32,14 +32,13 @@ const DayScroll = ({
   dailyProgress,
   workoutDays
 }: DayScrollProps) => {
+  const DayRef = useRef<ScrollView>(null);
   const [days, setDays] = useState<number[]>([1]);
 
   const handleScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
     const index = Math.round(e.nativeEvent.contentOffset.x / dayW);
     setSelectedDay(index + 1);
   };
-
-  const DayRef = useRef<ScrollView>(null);
 
   const scrollToDay = (day: number) => {
     const current = DayRef.current;

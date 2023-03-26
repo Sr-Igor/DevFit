@@ -1,4 +1,5 @@
 import * as S from './styled';
+
 type ConfgButtonProps = {
   onPress: () => void;
 };

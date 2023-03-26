@@ -1,24 +1,33 @@
+//Styled
 import * as S from './styled';
 
-import { useNavigation, useRoute } from '@react-navigation/native';
-import { StackScreenRouteProp, StackScreenNavigationProp } from 'types/MyWorkouts';
-import HeaderButton from 'components/HeaderButton';
-import { useAppSelector, useAppDispatch } from 'hooks/redux-hook';
-import ExerciceItem from 'components/Exercise';
-
-import { setUserWorkouts } from 'store/reducers/user/actions';
+//React
 import { useLayoutEffect, useState } from 'react';
-import { User } from 'types/user';
-import DefaultButton from 'components/Button';
-import { Exercise as ExerciseType } from 'types/workout';
+import { setUserWorkouts } from 'store/reducers/user/actions';
+import { useAppSelector, useAppDispatch } from 'hooks/redux-hook';
+import { useNavigation, useRoute } from '@react-navigation/native';
+
+//Components
 import Modal from 'components/Modal';
+import DefaultButton from 'components/Button';
+import ExerciceItem from 'components/Exercise';
+import HeaderButton from 'components/HeaderButton';
+
+//Utils
 import { muscles } from 'utils/constants';
-import { formatMuscleImage } from 'components/WorkoutItem/actions';
+import { formatMuscleImage } from 'utils/formatMuscleImage';
+
+//Types
+import { User } from 'types/user';
+import { Exercise as ExerciseType } from 'types/workout';
+import { StackScreenRouteProp, StackScreenNavigationProp } from 'types/MyWorkouts';
 
 const ActionWorkout = () => {
+  //Hooks
   const route = useRoute<StackScreenRouteProp>();
   const navigation = useNavigation<StackScreenNavigationProp>();
 
+  //Redux
   const user: User = useAppSelector((state) => state.profile);
   const workout = user.myWorkouts.find((workout) => workout.id === route.params?.id);
   const dispatch = useAppDispatch();

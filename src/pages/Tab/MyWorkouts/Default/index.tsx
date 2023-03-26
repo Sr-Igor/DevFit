@@ -1,12 +1,19 @@
+//Styled
+import * as S from './styled';
+
+//React
+import { useLayoutEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { setUserWorkouts } from 'store/reducers/user/actions';
 import { useAppSelector, useAppDispatch } from 'hooks/redux-hook';
+
+//Components
+import AddButton from 'components/AddButton';
+import WorkoutItem from 'components/WorkoutItem';
+
+//Types
 import { User } from 'types/user';
 import { Workout } from 'types/workout';
-import { setUserWorkouts } from 'store/reducers/user/actions';
-import WorkoutItem from 'components/WorkoutItem';
-import * as S from './styled';
-import { useNavigation } from '@react-navigation/native';
-import { useLayoutEffect } from 'react';
-import AddButton from 'components/AddButton';
 import { StackScreenNavigationProp } from 'types/MyWorkouts';
 
 const MyWorkouts = () => {

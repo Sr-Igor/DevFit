@@ -1,7 +1,14 @@
-import { Exercise as ExerciseType } from 'types/workout';
+//Styled
 import * as S from './styled';
-import { formatMuscleImage } from 'components/WorkoutItem/actions';
+
+//Components
+import { formatMuscleImage } from 'utils/formatMuscleImage';
+
+//SwipeLib
 import { SwipeRow } from 'react-native-swipe-list-view';
+
+//Types
+import { Exercise as ExerciseType } from 'types/workout';
 
 type ExerciseProps = {
   exercise: ExerciseType;

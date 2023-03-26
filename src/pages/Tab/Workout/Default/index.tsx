@@ -1,16 +1,22 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+//Styled
 import * as S from './styled';
-import { useNavigation } from '@react-navigation/native';
-import WorkoutItem from 'components/WorkoutItem';
+
+//React
 import { useAppSelector } from 'hooks/redux-hook';
+import { useNavigation } from '@react-navigation/native';
+import { useEffect, useLayoutEffect, useState } from 'react';
+
+//Components
+import WorkoutItem from 'components/WorkoutItem';
+
+//Types
 import { User } from 'types/user';
 import { Workout } from 'types/workout';
 import { StackScreenNavigationProp } from 'types/Workouts';
 
 const WorkoutPage = () => {
-  const navigation = useNavigation<StackScreenNavigationProp>();
   const user: User = useAppSelector((state) => state.profile);
-
+  const navigation = useNavigation<StackScreenNavigationProp>();
   const [lastWorkout, setLastWorkout] = useState<Workout | null>(null);
 
   useLayoutEffect(() => {

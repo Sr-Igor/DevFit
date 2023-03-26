@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { Workout } from 'types/workout';
 
 //Actions
-import { formatMuscleImage } from './actions';
+import { formatMuscleImage } from 'utils/formatMuscleImage';
 
 export type WorkoutItemProps = {
   data: Workout;

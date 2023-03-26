@@ -1,23 +1,37 @@
-import { StackActions, useNavigation, useRoute } from '@react-navigation/native';
-import { StackScreenNavigationProp, StackScreenRouteProp } from 'types/Workouts';
-import { useEffect, useLayoutEffect, useState } from 'react';
+//Styled
 import * as S from './styled';
-import HeaderButton from 'components/HeaderButton';
-import { Exercise, Workout } from 'types/workout';
+
+//React
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from 'hooks/redux-hook';
-import { User } from 'types/user';
-import ExerciseCheck from 'components/ExerciseCheck';
-import { formatDate } from 'utils/formatDate';
 import { setDailyProgress, setLastWorkout } from 'store/reducers/user/actions';
+import { StackActions, useNavigation, useRoute } from '@react-navigation/native';
+
+//Components
+import HeaderButton from 'components/HeaderButton';
+import ExerciseCheck from 'components/ExerciseCheck';
+
+//Utils
+import { formatDate } from 'utils/formatDate';
 import { generateProgress } from 'utils/generateProgress';
+
+//Types
+import { User } from 'types/user';
+import { Exercise, Workout } from 'types/workout';
+import { StackScreenNavigationProp, StackScreenRouteProp } from 'types/Workouts';
+
 const WorkoutCheckList = () => {
+  //Hooks
   const navigation = useNavigation<StackScreenNavigationProp>();
   const route = useRoute<StackScreenRouteProp>();
 
-  const [currentWorkout, setCurrentWorkout] = useState<Workout>({} as Workout);
-  const [exercises, setExercises] = useState<Exercise[]>([]);
+  //Redux
   const user: User = useAppSelector((state) => state.profile);
   const dispatch = useAppDispatch();
+
+  //States
+  const [currentWorkout, setCurrentWorkout] = useState<Workout>({} as Workout);
+  const [exercises, setExercises] = useState<Exercise[]>([]);
 
   useLayoutEffect(() => {
     navigation.setOptions({

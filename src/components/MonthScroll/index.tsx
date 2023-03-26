@@ -11,7 +11,7 @@ import { NativeSyntheticEvent } from 'react-native/Libraries/Types/CoreEventType
 import { NativeScrollEvent } from 'react-native/Libraries/Components/ScrollView/ScrollView';
 
 //Utils
-import { months } from './constants';
+import { months } from 'utils/constants';
 
 type MonthScrollProps = {
   selectedMonth: number;

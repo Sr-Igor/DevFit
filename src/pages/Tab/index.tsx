@@ -5,9 +5,9 @@ const MainTab = createBottomTabNavigator();
 //Bar
 import TabBar from 'components/TabBar';
 
-import HomeStack from './HomeStack';
-import WorkoutStack from './WorkoutStack';
-import MyWorkoutStack from './MyWorkoutStack';
+import HomeStack from '../../navigators/HomeStack';
+import WorkoutStack from '../../navigators/WorkoutStack';
+import MyWorkoutStack from '../../navigators/MyWorkoutStack';
 
 const DefaultTab = () => (
   <MainTab.Navigator
