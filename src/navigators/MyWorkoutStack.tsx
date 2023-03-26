@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import MyWokout from 'pages/Tab/MyWorkouts/Default';
+import MyWorkout from 'pages/Tab/MyWorkouts/Default';
 import ActionWorkout from 'pages/Tab/MyWorkouts/ActionWorkout';
 
 import { MyWorkoutStackParamList } from 'types/MyWorkouts';
@@ -9,7 +9,7 @@ const MainStack = createNativeStackNavigator<MyWorkoutStackParamList>();
 
 const MyWorkoutStack = () => (
   <MainStack.Navigator
-    initialRouteName="MyWokout"
+    initialRouteName="MyWorkout"
     screenOptions={{
       headerStyle: {
         backgroundColor: '#F2F2F2'
@@ -21,7 +21,7 @@ const MyWorkoutStack = () => (
       headerTitleAlign: 'center'
     }}
   >
-    <MainStack.Screen name="MyWokout" component={MyWokout} />
+    <MainStack.Screen name="MyWorkout" component={MyWorkout} />
     <MainStack.Screen name="ActionWorkout" component={ActionWorkout} />
   </MainStack.Navigator>
 );

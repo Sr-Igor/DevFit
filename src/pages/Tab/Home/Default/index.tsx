@@ -21,10 +21,11 @@ import { generateProgress } from 'utils/generateProgress';
 
 //Types
 import { User } from 'types/user';
-import { StackScreenNavigationProp } from 'types/Home';
+import { StackScreenNavigationProp as HomeProps } from 'types/Home';
+import { StackScreenNavigationProp as WorkoutProps } from 'types/Workouts';
 
 const Home = () => {
-  const navigation = useNavigation<StackScreenNavigationProp>();
+  const navigation = useNavigation<WorkoutProps & HomeProps>();
   const dispatch = useAppDispatch();
 
   const user: User = useAppSelector((state) => state.profile);
@@ -52,6 +53,7 @@ const Home = () => {
 
   const goToWorkout = () => {
     alert('goToWorkout');
+    navigation.navigate('Workout');
   };
 
   return (

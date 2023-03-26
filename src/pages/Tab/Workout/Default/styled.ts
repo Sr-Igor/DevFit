@@ -10,7 +10,7 @@ export const WorkoutList = styled.FlatList`
   width: 100%;
 `;
 
-export const LastWokoutArea = styled.View`
+export const LastWorkoutArea = styled.View`
   ${({ theme }) => css`
     width: 100%;
     height: 140px;

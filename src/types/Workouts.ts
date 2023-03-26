@@ -6,14 +6,14 @@ import type { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 //General Stack Types
 export type WorkoutStackParamList = {
   //Hight Order
-  Wokout: undefined;
+  Workout: undefined;
   CheckList: { id: number };
 };
 
 //Default Stack Types
-export type StackScreenRouteProp = RouteProp<WorkoutStackParamList, 'Wokout' | 'CheckList'>;
+export type StackScreenRouteProp = RouteProp<WorkoutStackParamList, 'Workout' | 'CheckList'>;
 
 export type StackScreenNavigationProp = CompositeNavigationProp<
-  StackNavigationProp<WorkoutStackParamList, 'Wokout', 'CheckList'>,
+  StackNavigationProp<WorkoutStackParamList, 'Workout', 'CheckList'>,
   BottomTabNavigationProp<WorkoutStackParamList>
 >;

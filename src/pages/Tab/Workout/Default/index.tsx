@@ -41,7 +41,7 @@ const WorkoutPage = () => {
   return (
     <S.Container>
       {lastWorkout && (
-        <S.LastWokoutArea>
+        <S.LastWorkoutArea>
           <S.Title> Seu último treino:</S.Title>
           <WorkoutItem
             onPress={(data) => actionWorkout(data.id)}
@@ -49,7 +49,7 @@ const WorkoutPage = () => {
             data={lastWorkout}
             isAction
           />
-        </S.LastWokoutArea>
+        </S.LastWorkoutArea>
       )}
 
       <S.Title> Escolha seu treino:</S.Title>
