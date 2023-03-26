@@ -35,7 +35,7 @@ export const formatBallon = (
   } else if (date.getTime() > today.getTime()) {
     //Is tomorrow
     isFeature = true;
-    configsFormat.text = 'Data no futuro!';
+    configsFormat.text = 'Treino no futuro!';
     configsFormat.isFeature = true;
   } else {
     if (dailyProgress?.includes(formatedDate)) {

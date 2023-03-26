@@ -67,7 +67,6 @@ const Home = () => {
       <DayStatus
         selectedMonth={selectedMonth}
         selectedDay={selectedDay}
-        // setSelectedDay={setSelectedDay}
         dailyProgress={user.dailyProgress}
         workoutDays={user.workoutDays}
         handleDailyProgress={handleDailyProgress}
