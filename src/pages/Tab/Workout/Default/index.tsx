@@ -13,6 +13,7 @@ import WorkoutItem from 'components/WorkoutItem';
 import { User } from 'types/user';
 import { Workout } from 'types/workout';
 import { StackScreenNavigationProp } from 'types/Workouts';
+import HeaderButton from 'components/HeaderButton';
 
 const WorkoutPage = () => {
   const user: User = useAppSelector((state) => state.profile);
@@ -21,7 +22,8 @@ const WorkoutPage = () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTitle: 'Escolha um treino'
+      headerTitle: 'Escolha um treino',
+      headerLeft: () => <HeaderButton onPress={() => navigation.goBack()} text="Voltar" />
     });
   }, []);
 
