@@ -22,7 +22,7 @@ type DayScrollProps = {
 };
 
 const screenWidth = Math.round(Dimensions.get('window').width);
-const dayW = screenWidth / 9;
+const dayW = Math.floor(screenWidth / 9);
 const offSetW = Math.round((screenWidth - dayW) / 2);
 
 const DayScroll = ({

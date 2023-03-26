@@ -7,7 +7,7 @@ export const formatDate = (date: Date) => {
 };
 
 export const endToDate = () => {
-  const now = addHours(Date.now(), 17);
+  const now = addHours(Date.now(), 0);
   let endToDay: Date | number = new Date();
   endToDay.setHours(23);
   endToDay.setMinutes(59);

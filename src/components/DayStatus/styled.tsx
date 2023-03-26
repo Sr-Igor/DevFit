@@ -16,7 +16,7 @@ export const BallonArrow = styled.View`
     border-right-color: transparent;
     border-right-width: 15px;
 
-    border-bottom-color: ${theme.colors.lightGray};
+    border-bottom-color: ${theme.colors.mainBg};
     border-bottom-width: 15px;
   `}
 `;
@@ -25,7 +25,7 @@ export const BallonArea = styled.View`
   ${({ theme }) => css`
     width: 90%;
     padding: ${theme.spacings.small};
-    background-color: ${theme.colors.lightGray};
+    background-color: ${theme.colors.mainBg};
     border-radius: ${theme.border.radius};
     align-items: center;
     justify-content: center;

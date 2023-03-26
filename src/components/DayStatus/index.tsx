@@ -71,7 +71,7 @@ const DayStatus = ({
       <S.BallonArrow />
       <S.BallonArea>
         <S.BallonBigText>{configs.text}</S.BallonBigText>
-        {configs.isToday && <S.BallonBigText>{timeLeft}</S.BallonBigText>}
+        {configs.isToday && <S.BallonBigText>Tempo restante: {timeLeft}</S.BallonBigText>}
         {configs.button && (
           <DefaultButton
             text={configs.button}

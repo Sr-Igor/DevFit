@@ -50,13 +50,13 @@ export const userLevel = [
 ];
 
 export const days = [
-  { id: 1, name: 'Domingo' },
-  { id: 2, name: 'Segunda' },
-  { id: 3, name: 'Terça' },
-  { id: 4, name: 'Quarta' },
-  { id: 5, name: 'Quinta' },
-  { id: 6, name: 'Sexta' },
-  { id: 7, name: 'Sábado' }
+  { id: 0, name: 'Domingo' },
+  { id: 1, name: 'Segunda' },
+  { id: 2, name: 'Terça' },
+  { id: 3, name: 'Quarta' },
+  { id: 4, name: 'Quinta' },
+  { id: 5, name: 'Sexta' },
+  { id: 6, name: 'Sábado' }
 ];
 
 export const muscles = [
