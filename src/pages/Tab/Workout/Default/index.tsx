@@ -1,11 +1,64 @@
-import { View, Text } from 'react-native';
+import { useEffect, useLayoutEffect, useState } from 'react';
+import * as S from './styled';
+import { useNavigation } from '@react-navigation/native';
+import WorkoutItem from 'components/WorkoutItem';
+import { useAppSelector } from 'hooks/redux-hook';
+import { User } from 'types/user';
+import { Workout } from 'types/workout';
+import { StackScreenNavigationProp } from 'types/Workouts';
 
-const Workout = () => {
+const WorkoutPage = () => {
+  const navigation = useNavigation<StackScreenNavigationProp>();
+  const user: User = useAppSelector((state) => state.profile);
+
+  const [lastWorkout, setLastWorkout] = useState<Workout | null>(null);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerTitle: 'Escolha um treino'
+    });
+  }, []);
+
+  useEffect(() => {
+    if (user.lastWorkout) {
+      const workout = user.myWorkouts.find((item) => item.id == user.lastWorkout);
+      setLastWorkout(workout || null);
+    }
+  }, [user]);
+
+  const actionWorkout = (id: number) => {
+    navigation.navigate('CheckList', { id });
+  };
+
   return (
-    <View>
-      <Text>Workout Stack Default</Text>
-    </View>
+    <S.Container>
+      {lastWorkout && (
+        <S.LastWokoutArea>
+          <S.Title> Seu último treino:</S.Title>
+          <WorkoutItem
+            onPress={(data) => actionWorkout(data.id)}
+            userWorkouts={user.myWorkouts || []}
+            data={lastWorkout}
+            isAction
+          />
+        </S.LastWokoutArea>
+      )}
+
+      <S.Title> Escolha seu treino:</S.Title>
+      <S.WorkoutList
+        data={user.myWorkouts}
+        renderItem={({ item }) => (
+          <WorkoutItem
+            onPress={(data) => actionWorkout(data.id)}
+            userWorkouts={user.myWorkouts || []}
+            data={item as Workout}
+            isAction
+          />
+        )}
+        keyExtractor={(item, index) => index.toString()}
+      />
+    </S.Container>
   );
 };
 
-export default Workout;
+export default WorkoutPage;

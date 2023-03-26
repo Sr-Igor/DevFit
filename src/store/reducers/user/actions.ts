@@ -26,6 +26,11 @@ export const setDailyProgress = (dailyProgress: string[]) => ({
   payload: { dailyProgress }
 });
 
+export const setLastWorkout = (lastWorkout: string) => ({
+  type: types.SET_LAST_WORKOUT,
+  payload: { lastWorkout }
+});
+
 export const resetUser = () => ({
   type: types.RESET_USER
 });

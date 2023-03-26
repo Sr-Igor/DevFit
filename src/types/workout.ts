@@ -5,6 +5,7 @@ export type Exercise = {
   sets?: number | string;
   reps?: number | string;
   load?: number | string;
+  done?: boolean;
 };
 
 export type Workout = {

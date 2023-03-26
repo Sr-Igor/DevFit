@@ -3,6 +3,10 @@ import { iconGenerate } from './actions';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
+  if (state.index === 1) {
+    return null;
+  }
+
   return (
     <S.Container>
       {state.routes.map((route, index: number) => {

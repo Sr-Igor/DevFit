@@ -16,9 +16,17 @@ export type WorkoutItemProps = {
   onDelete?: (data: Workout) => void;
   userWorkouts: Workout[];
   isEditable?: boolean;
+  isAction?: boolean;
 };
 
-const WorkoutItem = ({ data, onPress, userWorkouts, isEditable, onDelete }: WorkoutItemProps) => {
+const WorkoutItem = ({
+  data,
+  onPress,
+  userWorkouts,
+  isEditable,
+  onDelete,
+  isAction
+}: WorkoutItemProps) => {
   const [included, setIncluded] = useState(false);
   const [muslceGroups, setMuscleGroups] = useState<string[]>([]);
 
@@ -59,12 +67,15 @@ const WorkoutItem = ({ data, onPress, userWorkouts, isEditable, onDelete }: Work
       <S.WorkoutActions>
         <S.WorkoutButton onPress={() => toggleItem()} underlayColor="none">
           <>
-            {!isEditable && (
+            {!isEditable && !isAction && (
               <S.WorkoutButtonImage
                 source={!included ? require('assets/add.png') : require('assets/check-black.png')}
               />
             )}
-            {isEditable && <S.WorkoutButtonImage source={require('assets/edit-black.png')} />}
+            {isEditable && !isAction && (
+              <S.WorkoutButtonImage source={require('assets/edit-black.png')} />
+            )}
+            {isAction && <S.WorkoutButtonImage source={require('assets/play-black.png')} />}
           </>
         </S.WorkoutButton>
         {isEditable && onDelete && (

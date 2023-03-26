@@ -42,6 +42,11 @@ export default function userReducer(state = initialState, action: Action) {
         ...state,
         dailyProgress: action.payload.dailyProgress
       };
+    case types.SET_LAST_WORKOUT:
+      return {
+        ...state,
+        lastWorkout: action.payload.lastWorkout
+      };
     case types.RESET_USER:
       return initialState;
     default:
