@@ -16,12 +16,22 @@ export type RootStackParamList = {
   Starter: undefined;
   StarterName: undefined;
   StarterDays: undefined;
+
+  //Tabs
+  HomeStack: undefined;
+  WorkoutStack: undefined;
+  MyWorkoutStack: undefined;
 };
 
 //Default Stack Types
 export type StackScreenRouteProp = RouteProp<
   RootStackParamList,
-  'StackDefault' | 'StarterName' | 'StarterDays' | 'StarterLevel' | 'StarterRecommends'
+  | 'StackDefault'
+  | 'StarterName'
+  | 'StarterDays'
+  | 'StarterLevel'
+  | 'StarterRecommends'
+  | 'HomeStack'
 >;
 
 export type StackScreenNavigationProp = CompositeNavigationProp<
@@ -33,8 +43,14 @@ export type StackScreenNavigationProp = CompositeNavigationProp<
 >;
 
 //Default Tab Types
-export type TabScreenRouteProp = RouteProp<RootStackParamList, 'TabDefault'>;
+export type TabScreenRouteProp = RouteProp<
+  RootStackParamList,
+  'TabDefault' | 'HomeStack' | 'WorkoutStack' | 'MyWorkoutStack'
+>;
 export type TabScreenNavigationProp = CompositeNavigationProp<
-  StackNavigationProp<RootStackParamList, 'TabDefault'>,
+  StackNavigationProp<
+    RootStackParamList,
+    'TabDefault' | 'HomeStack' | 'WorkoutStack' | 'MyWorkoutStack'
+  >,
   BottomTabNavigationProp<RootStackParamList>
 >;

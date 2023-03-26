@@ -22,7 +22,7 @@ import { generateProgress } from 'utils/generateProgress';
 //Types
 import { User } from 'types/user';
 import { StackScreenNavigationProp as HomeProps } from 'types/Home';
-import { StackScreenNavigationProp as WorkoutProps } from 'types/Workouts';
+import { TabScreenNavigationProp as WorkoutProps } from 'types/Navigation';
 
 const Home = () => {
   const navigation = useNavigation<WorkoutProps & HomeProps>();
@@ -52,8 +52,7 @@ const Home = () => {
   };
 
   const goToWorkout = () => {
-    alert('goToWorkout');
-    navigation.navigate('Workout');
+    navigation.navigate('WorkoutStack');
   };
 
   return (
